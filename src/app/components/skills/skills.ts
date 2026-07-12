@@ -26,26 +26,31 @@ export class SkillsComponent {
       ],
     },
     {
-      category: 'Backend & Blockchain',
-      icon: '⚙️',
+      category: 'Backend & Database',
+      icon: '🗄️',
       skills: [
-        { name: 'Node.js', level: 60 },
+        { name: 'Node.js', level: 65 },
+        { name: 'PHP Laravel', level: 65 },
         { name: 'Python / Flask', level: 60 },
-        { name: 'PHP Laravel', level: 55 },
-        { name: 'Java', level: 50 },
-        { name: 'Solidity', level: 50 },
+        { name: 'Firebase', level: 55 },
       ],
     },
     {
-      category: 'Tools & Platforms',
-      icon: '🛠️',
+      category: 'Languages & Blockchain',
+      icon: '⚙️',
       skills: [
-        { name: 'Git / GitHub / Bitbucket', level: 80 },
-        { name: 'Docker', level: 65 },
-        { name: 'Figma / Zeplin', level: 70 },
         { name: 'WordPress', level: 75 },
-        { name: 'AWS', level: 55 },
+        { name: 'Java', level: 50 },
+        { name: 'C++', level: 50 },
+        { name: 'Solidity', level: 50 },
       ],
     },
+  ];
+
+  tools: string[] = [
+    'Trello', 'GitHub', 'Bitbucket', 'Zeplin', 'Figma', 'VS Code', 'Postman',
+    'Docker', 'AWS', 'Git', 'DeepSeek', 'ChatGPT', 'GitHub Copilot', 'Ethereum',
+    'MetaMask', 'Bootstrap', 'Angular Flex-Layout', 'Firebase', 'Webpack',
+    'Jira', 'Claude', 'PHP Laravel',
   ];
 }

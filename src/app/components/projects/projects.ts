@@ -21,10 +21,10 @@ export interface Project {
 export class ProjectsComponent {
   projects: Project[] = [
     {
-      title: 'Transfer Platform',
+      title: 'Iconic Guest Transfer Platform',
       tagline: 'Full-featured B2B payment platform with real-time tracking.',
       body: [
-        'Led the development of a transfer platform processing over 10,000 monthly transactions. Built with Angular 16+, the platform handles multi-step payment flows, real-time status tracking, and a reporting dashboard used daily by 100+ transfer clients.',
+        'Led the development of a transfer platform processing 2,000+ monthly transactions. Built with Angular 16+, the platform handles multi-step payment flows, real-time status tracking, and a reporting dashboard used daily by 100+ companies.',
         'Integrated REST APIs backed by PHP Laravel, implemented RxJS-driven state management, and followed Material Design guidelines throughout to ensure a consistent, professional UI.',
       ],
       tags: ['Angular 16+', 'RxJS', 'Material Design', 'REST APIs', 'PHP Laravel'],
@@ -35,14 +35,14 @@ export class ProjectsComponent {
       accentColor: '#00b4d8',
     },
     {
-      title: 'Logistics Tracking Platform',
+      title: 'EC Refunds Tracking Platform',
       tagline: 'Angular + Python Flask platform serving ELTA Courier.',
       body: [
         'Developed a full logistics tracking system for ELTA Courier, serving internal company users across the country. The platform integrates 5+ third-party APIs covering payments, mapping, and notifications.',
         'Also built single Angular web microservices for specific internal operations and delivered several pure HTML/CSS/JS landing pages for marketing campaigns.',
       ],
       tags: ['Angular', 'Python Flask', 'REST APIs', 'Mapping APIs'],
-      images: ['assets/projects/logistics-1.png', 'assets/projects/logistics-2.png'],
+      images: ['assets/projects/ec-dashboard.png', 'assets/projects/ec-servicer.jpg'],
       liveUrl: '#',
       repoUrl: '#',
       featured: true,
@@ -55,7 +55,7 @@ export class ProjectsComponent {
         'A comprehensive hotel management web application handling room availability, booking workflows, and guest communication — integrated with a PMS (Property Management System).',
       ],
       tags: ['Angular', 'Node.js', 'PHP Laravel', 'PMS Integration'],
-      images: ['assets/projects/hotel-1.png'],
+      images: ['assets/projects/hotels-1.png'],
       liveUrl: '#',
       repoUrl: '#',
       accentColor: '#0077b6',
@@ -66,10 +66,21 @@ export class ProjectsComponent {
       body: [
         'Thesis project — a Solidity smart contract system deployed on the Ethereum network enabling secure, permissioned sharing of patient health data between medical institutions. Frontend built with React and Web3.js.',
       ],
-      tags: ['Solidity', 'Web3.js', 'React', 'Ethereum'],
-      images: ['assets/projects/blockchain-1.png'],
+      tags: ['Solidity', 'Web3.js', 'React', 'Ethereum', 'Security'],
+      images: ['assets/projects/chain-1.png'],
       repoUrl: '#',
       accentColor: '#023e8a',
+    },
+    {
+      title: 'Transfer Widget',
+      tagline: 'Embeddable widget for seamless transfer creation and processing.',
+      body: [
+        'An embeddable widget enabling seamless transfer creation and processing, integrated directly with the Transfer Platform for partner sites and third-party integrations.',
+      ],
+      tags: ['Angular 16+', 'RxJS', 'Material Design', 'REST APIs', 'PHP Laravel'],
+      images: ['assets/projects/transfers-widget-1.png', 'assets/projects/transfers-widget-2.png'],
+      repoUrl: '#',
+      accentColor: '#90e0ef',
     },
     {
       title: 'EC Refunds App',
@@ -78,7 +89,7 @@ export class ProjectsComponent {
         'Web application built to streamline the EC refunds department, enabling faster resolution of claims through a structured workflow with real-time updates powered by Python Flask.',
       ],
       tags: ['Angular', 'REST API', 'Python Flask', 'Real-time Updates'],
-      images: ['assets/projects/refunds-1.png'],
+      images: ['assets/projects/ec-servicer.jpg'],
       repoUrl: '#',
       accentColor: '#0096c7',
     },
@@ -88,8 +99,8 @@ export class ProjectsComponent {
       body: [
         'A platform that facilitates connections between tourists and local guides in Greece. Built with Angular 19+ and Node.js, featuring real-time messaging and guide discovery by location.',
       ],
-      tags: ['Angular 19+', 'RxJS', 'Node.js', 'REST APIs'],
-      images: ['assets/projects/guides-1.png'],
+      tags: ['Angular 19+', 'RxJS', 'Material Design', 'REST APIs', 'Node.js'],
+      images: ['assets/projects/youthful-1.png'],
       liveUrl: '#',
       repoUrl: '#',
       accentColor: '#00b4d8',

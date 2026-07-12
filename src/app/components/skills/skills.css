@@ -75,3 +75,29 @@
   border-radius: 999px;
   transition: width 0.8s ease;
 }
+
+.tools-title {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 48px 0 20px;
+}
+
+.tools-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tools-row li {
+  font-size: 0.85rem;
+  font-family: var(--font-mono);
+  color: var(--color-primary);
+  background: rgba(0, 180, 216, 0.08);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(0, 180, 216, 0.2);
+}

@@ -72,6 +72,13 @@
   color: var(--color-primary);
 }
 
+.hero-role {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+}
+
 .hero-desc {
   font-size: 1.1rem;
   color: var(--color-text-muted);
