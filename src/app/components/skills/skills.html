@@ -1,0 +1,33 @@
+<section class="section skills" id="skills">
+  <div class="container">
+    <p class="section-label">What I Know</p>
+    <h2 class="section-title">Skills & Technologies</h2>
+    <p class="section-subtitle">
+      A snapshot of the tools and technologies I work with regularly.
+    </p>
+
+    <div class="skills-grid">
+      @for (group of skillGroups; track group.category) {
+        <div class="skill-card">
+          <div class="skill-card-header">
+            <span class="skill-icon">{{ group.icon }}</span>
+            <h3 class="skill-category">{{ group.category }}</h3>
+          </div>
+          <ul class="skill-list">
+            @for (skill of group.skills; track skill.name) {
+              <li class="skill-item">
+                <div class="skill-meta">
+                  <span class="skill-name">{{ skill.name }}</span>
+                  <span class="skill-pct">{{ skill.level }}%</span>
+                </div>
+                <div class="skill-bar">
+                  <div class="skill-fill" [style.width.%]="skill.level"></div>
+                </div>
+              </li>
+            }
+          </ul>
+        </div>
+      }
+    </div>
+  </div>
+</section>

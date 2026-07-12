@@ -1,0 +1,12 @@
+main {
+  display: block;
+}
+
+/* Section dividers */
+app-about,
+app-skills,
+app-projects,
+app-contact {
+  display: block;
+  border-top: 1px solid var(--color-border);
+}

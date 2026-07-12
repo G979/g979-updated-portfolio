@@ -1,0 +1,165 @@
+<section class="section projects" id="projects">
+  <div class="container">
+    <p class="section-label">My Work</p>
+    <h2 class="section-title">Featured Projects</h2>
+    <p class="section-subtitle">
+      A selection of projects I've built. Each one solved a real problem.
+    </p>
+
+    <!-- Featured: alternating full-width showcase -->
+    <div class="featured-list">
+      @for (project of featuredProjects; track project.title; let i = $index) {
+        <article class="showcase" [class.reverse]="i % 2 !== 0">
+
+          <!-- Image gallery -->
+          <div class="showcase-media" [style.--accent]="project.accentColor">
+            <div class="media-frame">
+              <div class="frame-bar">
+                <span></span><span></span><span></span>
+                @if (project.images.length > 1) {
+                  <span class="frame-counter mono">{{ getSlide(project.title) + 1 }} / {{ project.images.length }}</span>
+                }
+              </div>
+              <div class="frame-body">
+                @if (project.images.length > 0) {
+                  <img
+                    [src]="project.images[getSlide(project.title)]"
+                    [alt]="project.title + ' screenshot ' + (getSlide(project.title) + 1)"
+                    class="frame-img"
+                    [class.img-broken]="isBroken(project.title, getSlide(project.title))"
+                    loading="lazy"
+                    (error)="markBroken(project.title, getSlide(project.title))"
+                  />
+                }
+                <div class="frame-placeholder" [style.--accent]="project.accentColor">
+                  <span class="mono">{{ project.title }}</span>
+                </div>
+              </div>
+            </div>
+            @if (project.images.length > 1) {
+              <div class="slideshow-controls">
+                <button class="slide-btn" (click)="prevSlide(project)" aria-label="Previous image">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                  </svg>
+                </button>
+                <div class="slide-dots">
+                  @for (img of project.images; track $index) {
+                    <button
+                      class="slide-dot"
+                      [class.active]="getSlide(project.title) === $index"
+                      (click)="setSlide(project.title, $index)"
+                      [attr.aria-label]="'Image ' + ($index + 1)"
+                    ></button>
+                  }
+                </div>
+                <button class="slide-btn" (click)="nextSlide(project)" aria-label="Next image">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+              </div>
+            }
+          </div>
+
+          <!-- Text -->
+          <div class="showcase-text">
+            <p class="section-label">{{ project.tags[0] }}</p>
+            <h3 class="showcase-title">{{ project.title }}</h3>
+            <p class="showcase-tagline">{{ project.tagline }}</p>
+
+            @for (para of project.body; track $index) {
+              <p class="showcase-body">{{ para }}</p>
+            }
+
+            <ul class="project-tags">
+              @for (tag of project.tags; track tag) {
+                <li>{{ tag }}</li>
+              }
+            </ul>
+
+            <!-- <div class="project-links-row">
+              @if (project.repoUrl) {
+                <a [href]="project.repoUrl" target="_blank" rel="noopener" class="link-btn">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  View Code
+                </a>
+              }
+              @if (project.liveUrl) {
+                <a [href]="project.liveUrl" target="_blank" rel="noopener" class="link-btn link-btn--primary">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  Live Demo
+                </a>
+              }
+            </div> -->
+          </div>
+
+        </article>
+      }
+    </div>
+
+    <!-- Other projects grid -->
+    <h3 class="other-title">Other Projects</h3>
+    <div class="other-grid">
+      @for (project of otherProjects; track project.title) {
+        <article class="project-card">
+
+          <!-- Image area -->
+          <div class="card-media" [style.--accent]="project.accentColor">
+            @if (project.images[0]) {
+              <img
+                [src]="project.images[0]"
+                [alt]="project.title + ' screenshot'"
+                class="card-img"
+                loading="lazy"
+              />
+            }
+            <div class="card-placeholder">
+              <span class="mono">{{ project.title }}</span>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <div class="project-top">
+              <h3 class="project-title">{{ project.title }}</h3>
+              <div class="project-links">
+                @if (project.repoUrl) {
+                  <a [href]="project.repoUrl" target="_blank" rel="noopener" aria-label="Repository">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                  </a>
+                }
+                @if (project.liveUrl) {
+                  <a [href]="project.liveUrl" target="_blank" rel="noopener" aria-label="Live demo">
+                    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                  </a>
+                }
+              </div>
+            </div>
+
+            <p class="project-tagline">{{ project.tagline }}</p>
+            <p class="project-desc">{{ project.body[0] }}</p>
+
+            <ul class="project-tags">
+              @for (tag of project.tags; track tag) {
+                <li>{{ tag }}</li>
+              }
+            </ul>
+          </div>
+
+        </article>
+      }
+    </div>
+  </div>
+</section>

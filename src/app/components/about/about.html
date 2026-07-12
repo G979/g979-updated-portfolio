@@ -1,0 +1,50 @@
+<section class="section about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="avatar-wrap">
+          <img src="assets/projects/george.jpg" alt="Georgios Vasilakis" class="avatar-img" />
+        </div>
+        <div class="about-stats">
+          @for (fact of facts; track fact.label) {
+            <div class="stat-card">
+              <span class="stat-value">{{ fact.value }}</span>
+              <span class="stat-label">{{ fact.label }}</span>
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="about-text">
+        <p class="section-label">About Me</p>
+        <h2 class="section-title">Software Frontend Engineer.</h2>
+        <p class="about-para">
+          I build web experiences that combine technical precision with creative flair.
+          From blockchain platforms to real-time logistics systems, I thrive on turning
+          complex problems into elegant, user-friendly solutions.
+        </p>
+        <p class="about-para">
+          Outside of development, you'll find me watching and playing sports,
+          travelling to new places, and experimenting with digital art.
+        </p>
+
+        <div class="exp-list">
+          @for (job of experience; track job.company) {
+            <div class="exp-item">
+              <div class="exp-meta">
+                <span class="exp-role">{{ job.role }}</span>
+                <span class="exp-period mono">{{ job.period }}</span>
+              </div>
+              <span class="exp-company">{{ job.company }}</span>
+            </div>
+          }
+        </div>
+
+        <div class="about-links">
+          <a href="#contact" class="btn btn-primary">Contact Me</a>
+          <a href="https://g979.github.io/CV/" target="_blank" rel="noopener" class="btn btn-ghost">View Full CV</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
