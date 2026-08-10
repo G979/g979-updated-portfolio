@@ -18,11 +18,11 @@ export class SkillsComponent {
       category: 'Frontend',
       icon: '🎨',
       skills: [
+        { name: 'React', level: 75 },
         { name: 'Angular', level: 75 },
         { name: 'TypeScript', level: 75 },
         { name: 'JavaScript', level: 75 },
         { name: 'CSS / SCSS', level: 75 },
-        { name: 'React', level: 50 },
       ],
     },
     {

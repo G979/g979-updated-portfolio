@@ -35,17 +35,29 @@ export class ProjectsComponent {
       accentColor: '#00b4d8',
     },
     {
+      title: 'Health Data Blockchain',
+      tagline: 'React frontend for a secure patient data sharing dApp.',
+      body: [
+        'Thesis project — a React and Web3.js frontend for interacting with a Solidity smart contract system deployed on the Ethereum network, enabling secure, permissioned sharing of patient health data between medical institutions.',
+        'Built the component architecture around wallet connections, contract calls, and permission state, with a strong focus on making blockchain interactions feel approachable through a clean React UI.',
+      ],
+      tags: ['React', 'Web3.js', 'Solidity', 'Ethereum', 'Security'],
+      images: ['assets/projects/chain-1.png'],
+      repoUrl: '#',
+      featured: true,
+      accentColor: '#023e8a',
+    },
+    {
       title: 'EC Refunds Tracking Platform',
       tagline: 'Angular + Python Flask platform serving ELTA Courier.',
       body: [
         'Developed a full logistics tracking system for ELTA Courier, serving internal company users across the country. The platform integrates 5+ third-party APIs covering payments, mapping, and notifications.',
-        'Also built single Angular web microservices for specific internal operations and delivered several pure HTML/CSS/JS landing pages for marketing campaigns.',
+        'Also built single React web microservices for specific internal operations and delivered several pure HTML/CSS/JS landing pages for marketing campaigns.',
       ],
-      tags: ['Angular', 'Python Flask', 'REST APIs', 'Mapping APIs'],
+      tags: ['React', 'Python Flask', 'REST APIs', 'Mapping APIs'],
       images: ['assets/projects/ec-dashboard.png', 'assets/projects/ec-servicer.jpg'],
       liveUrl: '#',
       repoUrl: '#',
-      featured: true,
       accentColor: '#48cae4',
     },
     {
@@ -59,17 +71,6 @@ export class ProjectsComponent {
       liveUrl: '#',
       repoUrl: '#',
       accentColor: '#0077b6',
-    },
-    {
-      title: 'Health Data Blockchain',
-      tagline: 'Smart contract system for secure patient data sharing.',
-      body: [
-        'Thesis project — a Solidity smart contract system deployed on the Ethereum network enabling secure, permissioned sharing of patient health data between medical institutions. Frontend built with React and Web3.js.',
-      ],
-      tags: ['Solidity', 'Web3.js', 'React', 'Ethereum', 'Security'],
-      images: ['assets/projects/chain-1.png'],
-      repoUrl: '#',
-      accentColor: '#023e8a',
     },
     {
       title: 'Transfer Widget',
